@@ -82,7 +82,7 @@ docker run hello-world
 ```
 ใส่ Screenshot ของผลการรัน docker --version และ docker run hello-world ที่นี่
 ```
-<img width="750" height="416" alt="image" src="https://github.com/user-attachments/assets/fd195376-b3d3-40ee-b1b3-1e7df02f4c06" />
+<img width="1329" height="297" alt="image" src="https://github.com/user-attachments/assets/3e92c267-4fe0-4bcf-9bfe-b9bf10babc9a" />
 
 
 ## ขั้นตอนการทดลอง
@@ -108,6 +108,8 @@ docker inspect postgres
 ```
 ใส่ Screenshot ของผลการรัน docker images ที่นี่
 ```
+<img width="877" height="542" alt="image" src="https://github.com/user-attachments/assets/e3c9b8da-9e70-46f4-9aff-c06c12e9f418" />
+
 
 ### Step 2: Create Docker Volume for Data Persistence
 
