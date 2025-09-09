@@ -171,6 +171,8 @@ docker run --name postgres-lab \
 ```
 ใส่ Screenshot ของผลการรัน docker run ที่นี่
 ```
+<img width="738" height="115" alt="image" src="https://github.com/user-attachments/assets/7c68d04f-9984-4d99-ade5-88823a8fa89e" />
+
 
 ### Step 4: Verify Container Status and Resource Usage
 
