@@ -82,6 +82,8 @@ docker run hello-world
 ```
 ใส่ Screenshot ของผลการรัน docker --version และ docker run hello-world ที่นี่
 ```
+<img width="1205" height="421" alt="image" src="https://github.com/user-attachments/assets/367897cf-01f4-498f-8935-2c9677a1fce4" />
+
 
 
 ## ขั้นตอนการทดลอง
@@ -107,6 +109,7 @@ docker inspect postgres
 ```
 ใส่ Screenshot ของผลการรัน docker images ที่นี่
 ```
+<img width="1347" height="295" alt="image" src="https://github.com/user-attachments/assets/6bc0be33-ad76-4621-86ec-8ab10f915eb9" />
 
 
 
