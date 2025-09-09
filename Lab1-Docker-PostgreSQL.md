@@ -250,6 +250,9 @@ WHERE name IN ('shared_buffers', 'work_mem', 'maintenance_work_mem', 'effective_
 3. ผลการรัน \l และ \du
 ```
 <img width="606" height="435" alt="image" src="https://github.com/user-attachments/assets/43a1c7f8-9c98-4095-8803-a66674962b24" />
+```
+ผลการรัน SHOW shared_buffers; SHOW work_mem; SHOW maintenance_work_mem;SHOW effective_cache_size;
+```
 
 <img width="350" height="185" alt="image" src="https://github.com/user-attachments/assets/c532a0bc-9e5a-422a-97b1-a0cf4cf25903" />
 
