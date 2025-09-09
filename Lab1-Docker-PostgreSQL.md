@@ -135,6 +135,8 @@ docker volume create postgres-config
 ```
 ใส่ Screenshot ของผลการรัน docker volume ls และ docker volume inspect postgres-data ที่นี่
 ```
+<img width="764" height="466" alt="image" src="https://github.com/user-attachments/assets/2a4cd2cf-011b-43db-83a4-c9a75527002b" />
+
 
 ### Step 3: Create PostgreSQL Container with Volume
 
