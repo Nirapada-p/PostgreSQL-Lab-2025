@@ -198,7 +198,9 @@ docker volume inspect postgres-data
 3. ผลการรัน docker stats
 ```
 <img width="1309" height="109" alt="image" src="https://github.com/user-attachments/assets/28728ae4-ef32-4ea3-a8ce-a0141653b6d0" />
+
 <img width="779" height="500" alt="image" src="https://github.com/user-attachments/assets/71481117-19f3-4336-9568-2f4ca1fa04b1" />
+
 <img width="1056" height="88" alt="image" src="https://github.com/user-attachments/assets/daf83cca-8e04-4f01-af0b-d94242ac1bc7" />
 
 
@@ -247,6 +249,21 @@ WHERE name IN ('shared_buffers', 'work_mem', 'maintenance_work_mem', 'effective_
 2. ผลการรัน SHOW shared_buffers; SHOW work_mem; SHOW maintenance_work_mem;SHOW effective_cache_size;
 3. ผลการรัน \l และ \du
 ```
+<img width="606" height="435" alt="image" src="https://github.com/user-attachments/assets/43a1c7f8-9c98-4095-8803-a66674962b24" />
+
+<img width="350" height="185" alt="image" src="https://github.com/user-attachments/assets/c532a0bc-9e5a-422a-97b1-a0cf4cf25903" />
+
+<img width="273" height="121" alt="image" src="https://github.com/user-attachments/assets/81835280-fcd0-439e-860d-859e80c1c5b2" />
+
+<img width="369" height="135" alt="image" src="https://github.com/user-attachments/assets/e1f52b88-911a-460f-a19c-9b62c93ca193" />
+
+<img width="352" height="142" alt="image" src="https://github.com/user-attachments/assets/f879b928-fe48-4ad5-85fd-2ec833b15f10" />
+
+<img width="1086" height="498" alt="image" src="https://github.com/user-attachments/assets/7e7f1d6f-f1f5-4713-93ff-912f659b2513" />
+
+<img width="787" height="520" alt="image" src="https://github.com/user-attachments/assets/3615eeb5-c581-4eb5-82bb-07e146815310" />
+
+
 
 ### Step 6: Database Management Operations
 
@@ -291,6 +308,8 @@ WHERE datname = 'lab_db';
 2. ผลการรัน \l+ แสดงฐานข้อมูลทั้งหมด
 3. ผลการ query ข้อมูลฐานข้อมูล
 ```
+![Uploading image.png…]()
+
 
 ### Step 7: User และ Role Management
 
