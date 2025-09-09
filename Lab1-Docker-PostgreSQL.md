@@ -198,6 +198,8 @@ docker volume inspect postgres-data
 3. ผลการรัน docker stats
 ```
 <img width="1309" height="109" alt="image" src="https://github.com/user-attachments/assets/28728ae4-ef32-4ea3-a8ce-a0141653b6d0" />
+<img width="779" height="500" alt="image" src="https://github.com/user-attachments/assets/71481117-19f3-4336-9568-2f4ca1fa04b1" />
+<img width="1056" height="88" alt="image" src="https://github.com/user-attachments/assets/daf83cca-8e04-4f01-af0b-d94242ac1bc7" />
 
 
 
