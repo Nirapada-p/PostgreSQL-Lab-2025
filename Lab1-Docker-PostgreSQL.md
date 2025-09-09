@@ -249,7 +249,10 @@ WHERE name IN ('shared_buffers', 'work_mem', 'maintenance_work_mem', 'effective_
 2. ผลการรัน SHOW shared_buffers; SHOW work_mem; SHOW maintenance_work_mem;SHOW effective_cache_size;
 3. ผลการรัน \l และ \du
 ```
+```ผลการรัน SELECT version();```
+
 <img width="606" height="435" alt="image" src="https://github.com/user-attachments/assets/43a1c7f8-9c98-4095-8803-a66674962b24" />
+
 ```
 ผลการรัน SHOW shared_buffers; SHOW work_mem; SHOW maintenance_work_mem;SHOW effective_cache_size;
 ```
