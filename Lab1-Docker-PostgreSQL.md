@@ -258,7 +258,9 @@ WHERE name IN ('shared_buffers', 'work_mem', 'maintenance_work_mem', 'effective_
 <img width="369" height="135" alt="image" src="https://github.com/user-attachments/assets/e1f52b88-911a-460f-a19c-9b62c93ca193" />
 
 <img width="352" height="142" alt="image" src="https://github.com/user-attachments/assets/f879b928-fe48-4ad5-85fd-2ec833b15f10" />
-
+```
+ ผลการรัน \l และ \du
+```
 <img width="1086" height="498" alt="image" src="https://github.com/user-attachments/assets/7e7f1d6f-f1f5-4713-93ff-912f659b2513" />
 
 <img width="787" height="520" alt="image" src="https://github.com/user-attachments/assets/3615eeb5-c581-4eb5-82bb-07e146815310" />
