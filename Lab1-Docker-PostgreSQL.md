@@ -1,4 +1,4 @@
-# Lab 01: PostgreSQL Docker Setup and Basic Operations
+<img width="931" height="495" alt="image" src="https://github.com/user-attachments/assets/0f814f8e-b6b2-4e3c-9d25-4df42662109e" /># Lab 01: PostgreSQL Docker Setup and Basic Operations
 
 ## วัตถุประสงค์
 1. ติดตั้งและใช้งาน PostgreSQL ผ่าน Docker
@@ -1286,6 +1286,22 @@ LIMIT 5;
 3. ผลการรัน queries ที่สร้าง
 4. การวิเคราะห์ข้อมูลที่ได้
 ```
+### โครงสร้าง schemas และ tables (\dn+, \dt ecommerce.*)
+<img width="929" height="350" alt="image" src="https://github.com/user-attachments/assets/2b6c16a2-df9a-4b88-bd2e-5db835ecd9e4" />
+<img width="428" height="307" alt="image" src="https://github.com/user-attachments/assets/afae0417-d449-4a94-9011-3b379f657c26" />
+### ข้อมูลตัวอย่างในตารางต่างๆ
+<img width="891" height="475" alt="image" src="https://github.com/user-attachments/assets/0b0a3f7b-0b22-47bf-9409-9eeb98c9ccfc" />
+<img width="716" height="492" alt="image" src="https://github.com/user-attachments/assets/ce2f1829-734c-4613-b491-95f6ec3820f0" />
+<img width="577" height="235" alt="image" src="https://github.com/user-attachments/assets/6392b2f7-d0a5-47b3-8feb-69feb75886d3" />
+### ผลการรัน queries ที่สร้าง
+<img width="678" height="360" alt="image" src="https://github.com/user-attachments/assets/a00aba39-bc5a-4224-bb1e-6ef40fb38f8f" />
+<img width="956" height="372" alt="image" src="https://github.com/user-attachments/assets/1a7c8c66-34a9-4aa6-ad16-5d4bed3e8fa5" />
+<img width="981" height="363" alt="image" src="https://github.com/user-attachments/assets/5c06fcb4-7102-4f6d-b886-a2faa28bd410" />
+
+### การวิเคราะห์ข้อมูลที่ได้
+-ใช้ \dn+ และ \dt ตรวจสอบโครงสร้าง
+-ใช้ SELECT ดูตัวอย่างข้อมูล
+-ใช้ JOIN + SUM + GROUP BY + ORDER BY เพื่อวิเคราะห์ยอดขายและลูกค้า
 
 
 ## การทดสอบความเข้าใจ
@@ -1301,6 +1317,32 @@ LIMIT 5;
 **คำตอบ Quiz 1:**
 ```
 เขียนคำตอบที่นี่
+1.ความแตกต่างระหว่าง Named Volume และ Bind Mount ใน PostgreSQL
+Named Volume
+Docker สร้าง storage ให้โดยอัตโนมัติใน internal Docker path
+- ใช้ง่าย ไม่ต้องกำหนด path
+- ปลอดภัยสำหรับเก็บ data แบบ persist
+- สามารถ reuse กับ container อื่นได้
+Bind Mount	map โฟลเดอร์บน host machine ไปยัง container	- เหมาะกับพัฒนา ต้องการเข้าถึงไฟล์ host
+- สามารถแก้ไข data/config บน host ได้ทันที
+- ต้องระวัง permission และ path บน host
+2.เหตุใด shared_buffers จึงควรตั้งเป็น 25% ของ RAM?
+shared_buffers เป็น memory ของ PostgreSQL สำหรับ cache ข้อมูล table และ index
+ตั้งประมาณ 25% ของ RAM เพราะ: เยอะเกินไป → ระบบ OS อาจมี memory น้อย swap เกิด performance ลดลง
+น้อยเกินไป  PostgreSQL ต้องอ่าน disk บ่อย → ช้า เป็นค่า เริ่มต้นที่สมดุลระหว่าง PostgreSQL กับ OS cache
+การใช้ Schema ช่วยในการจัดการฐานข้อมูลขนาดใหญ่
+3. การใช้ Schema ช่วยในการจัดการฐานข้อมูลขนาดใหญ่อย่างไร?
+Schema = logical namespace แยกกลุ่มตาราง, view, functions, etc.
+ประโยชน์:จัดระเบียบข้อมูล → ลดความซ้ำซ้อนและสับสน
+แยกสิทธิ์ผู้ใช้ → assign permission แบบ schema-based
+ง่ายต่อการ backup/restore เฉพาะ schema
+รองรับ multi-tenant หรือระบบที่ต้องแยก data หลายชุด
+4. อธิบายประโยชน์ของการใช้ Docker สำหรับ Database Development
+-Isolation – แต่ละ container มี environment ของตัวเอง ไม่ชนกัน
+-Consistency – รันเหมือนกันทุกเครื่อง/dev/test/prod
+-ง่ายต่อการ setup – ไม่ต้องลง DB หลายเวอร์ชันบน host
+-Reproducible environment – reset หรือ rebuild DB ได้ง่าย
+-Version control – เปลี่ยนเวอร์ชัน PostgreSQL ได้ทันทีโดยไม่กระทบระบบหลัก
 ```
 
 
