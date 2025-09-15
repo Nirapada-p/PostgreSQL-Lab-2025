@@ -249,15 +249,11 @@ WHERE name IN ('shared_buffers', 'work_mem', 'maintenance_work_mem', 'effective_
 2. ผลการรัน SHOW shared_buffers; SHOW work_mem; SHOW maintenance_work_mem;SHOW effective_cache_size;
 3. ผลการรัน \l และ \du
 ```
-```ผลการรัน SELECT version();```
+```ผลการรัน ```
 <img width="372" height="185" alt="image" src="https://github.com/user-attachments/assets/99b41eff-0a8c-42b4-8d8a-a23f1dceca62" />
 
 
 <img width="606" height="435" alt="image" src="https://github.com/user-attachments/assets/43a1c7f8-9c98-4095-8803-a66674962b24" />
-
-```
-ผลการรัน SHOW shared_buffers; SHOW work_mem; SHOW maintenance_work_mem;SHOW effective_cache_size;
-```
 
 <img width="350" height="185" alt="image" src="https://github.com/user-attachments/assets/c532a0bc-9e5a-422a-97b1-a0cf4cf25903" />
 
@@ -266,9 +262,7 @@ WHERE name IN ('shared_buffers', 'work_mem', 'maintenance_work_mem', 'effective_
 <img width="369" height="135" alt="image" src="https://github.com/user-attachments/assets/e1f52b88-911a-460f-a19c-9b62c93ca193" />
 
 <img width="352" height="142" alt="image" src="https://github.com/user-attachments/assets/f879b928-fe48-4ad5-85fd-2ec833b15f10" />
-```
- ผลการรัน \l และ \du
-```
+
 <img width="1086" height="498" alt="image" src="https://github.com/user-attachments/assets/7e7f1d6f-f1f5-4713-93ff-912f659b2513" />
 
 <img width="787" height="520" alt="image" src="https://github.com/user-attachments/assets/3615eeb5-c581-4eb5-82bb-07e146815310" />
@@ -386,6 +380,13 @@ WHERE r.rolname NOT LIKE 'pg_%';
 2. ผลการรัน \du+
 3. ผลการ query pg_roles
 ```
+```
+Result
+```
+<img width="606" height="485" alt="image" src="https://github.com/user-attachments/assets/532e0163-9b46-4b44-b89f-63dea6655890" />
+<img width="903" height="421" alt="image" src="https://github.com/user-attachments/assets/e8158511-3235-403d-a664-b17ffac00281" />
+<img width="1050" height="486" alt="image" src="https://github.com/user-attachments/assets/6f943097-a7ad-4653-996c-20b99b5be971" />
+
 
 ### Step 8: การจัดการสิทธิ์ User
 
