@@ -650,6 +650,16 @@ SET search_path TO public;
 3. ผลการ JOIN ข้าม schemas (sales + hr + inventory)
 4. ข้อมูลที่แสดงจาก complex join ข้าม 3 schemas
 ```
+```
+Result
+```
+<img width="304" height="152" alt="image" src="https://github.com/user-attachments/assets/b52a4fb8-fb23-4ee2-bd9c-8f57a46a7a33" />
+<img width="535" height="365" alt="image" src="https://github.com/user-attachments/assets/fb1e5678-1700-41b1-93d2-919210b0ab61" />
+<img width="836" height="407" alt="image" src="https://github.com/user-attachments/assets/c71304ce-1658-4eb2-b15b-99ebe6e52fa8" />
+<img width="818" height="438" alt="image" src="https://github.com/user-attachments/assets/590c9160-fdc8-4876-af38-269025321cff" />
+
+
+
 
 ### Step 11: ทดสอบการเชื่อมต่อจาก User อื่น
 
