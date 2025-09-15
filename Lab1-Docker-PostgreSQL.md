@@ -940,12 +940,11 @@ CREATE USER analyst_user WITH
     NOREPLICATION
     CONNECTION LIMIT 10;
 
--- User: admin_user, รหัสผ่าน: admin123, สมาชิกของ db_admins
-CREATE USER admin_user WITH
+CREATE USER db_admins WITH
     PASSWORD 'admin123'
-    LOGIN
     CREATEDB
     CREATEROLE
+    LOGIN
     NOSUPERUSER;
 ```
 
@@ -956,6 +955,11 @@ CREATE USER admin_user WITH
 2. ผลการรัน \du แสดงผู้ใช้ทั้งหมด
 3. ผลการทดสอบเชื่อมต่อด้วย user ต่างๆ
 ```
+<img width="431" height="262" alt="image" src="https://github.com/user-attachments/assets/7e816cea-6966-4da3-ab1b-1c25df368b84" />
+<img width="494" height="166" alt="image" src="https://github.com/user-attachments/assets/94216ce1-3e2a-4fd6-8e84-6553405cf1cb" />
+<img width="401" height="270" alt="image" src="https://github.com/user-attachments/assets/01a74599-9059-41cd-b9e6-bd62a863434f" />
+
+
 
 ### แบบฝึกหัด 3: Schema Design และ Complex Queries
 **คำสั่ง**: สร้างระบบฐานข้อมูลร้านค้าออนไลน์:
