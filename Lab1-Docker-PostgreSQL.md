@@ -691,6 +691,10 @@ INSERT INTO test_permissions (name) VALUES ('Test by lab_user'); -- ทำไม
 2. ผลการทดสอบสิทธิ์ต่างๆ
 3. ข้อความ error (ถ้ามี) เมื่อไม่มีสิทธิ์
 ```
+```
+Result
+```
+<img width="1342" height="536" alt="image" src="https://github.com/user-attachments/assets/f5da7fa6-7694-48e4-82d9-b39f6797f542" />
 
 ### Step 12: การจัดการ Volume และ Data Persistence
 
