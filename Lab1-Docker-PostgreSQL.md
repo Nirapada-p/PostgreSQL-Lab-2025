@@ -461,9 +461,11 @@ Result
 **คำถาม
  ```
 Access Privileges   postgres=arwdDxtm/postgres มีความหมายอย่างไร
-
-
  ```
+สิทธิ์ (Privilege) เช่น INSERT SELECT UPDATE DELETE TRUNCATE REFERENCES TRIGGER
+postgres=arwdDxtm/postgres หมายถึง user postgres มีสิทธิ์ ครบทั้งหมด บนตาราง (INSERT, SELECT, UPDATE, DELETE, TRUNCATE, REFERENCES, TRIGGER, etc.) สิทธิ์เหล่านี้ถูก grant โดย user postgres เอง
+
+
 ### Step 9: Schema Management และ Namespace
 
 ```sql
