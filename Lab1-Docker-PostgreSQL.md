@@ -817,6 +817,11 @@ WHERE state = 'active';
 2. Memory configuration
 3. Active connections
 ```
+<img width="1281" height="517" alt="image" src="https://github.com/user-attachments/assets/054431b3-3c92-43c8-b1f9-bb2431236253" />
+<img width="641" height="498" alt="image" src="https://github.com/user-attachments/assets/634ac003-e0f7-4a20-8047-054c226564aa" />
+<img width="962" height="337" alt="image" src="https://github.com/user-attachments/assets/fc3da7a4-8fe8-4b92-8c99-49706619b228" />
+
+
 
 ## การแก้ไขปัญหาเบื้องต้น
 
