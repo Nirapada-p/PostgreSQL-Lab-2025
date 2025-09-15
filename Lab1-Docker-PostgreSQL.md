@@ -576,6 +576,13 @@ INSERT INTO hr.employee_orders (employee_id, customer_id, order_date, commission
 Result
 ```
 <img width="911" height="504" alt="image" src="https://github.com/user-attachments/assets/df490f4f-4c11-4947-91a3-eaf065ed1cf1" />
+<img width="602" height="474" alt="image" src="https://github.com/user-attachments/assets/4b9a77f3-5ecc-435f-aa6a-38e7052ed9ae" />
+<img width="468" height="248" alt="image" src="https://github.com/user-attachments/assets/6fd8f613-6898-4df5-ab71-9dca1458c207" />
+<img width="958" height="533" alt="image" src="https://github.com/user-attachments/assets/85565849-3eb0-45fb-be72-cdf9f90878bb" />
+<img width="955" height="415" alt="image" src="https://github.com/user-attachments/assets/740a17b0-0fe5-4e26-b2d0-0f0417cc8d6a" />
+
+
+
 
 ### Step 10: ทดสอบการเข้าถึง Schema และ Search Path
 
