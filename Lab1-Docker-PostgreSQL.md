@@ -1101,14 +1101,19 @@ INSERT INTO ecommerce.order_items (order_id, product_id, quantity, price) VALUES
    - หาสินค้าที่ขายดีที่สุด 5 อันดับ
    - หายอดขายรวมของแต่ละหมวดหมู่
    - หาลูกค้าที่ซื้อสินค้ามากที่สุด
+```
 
 ```sql
+-- =========================================
 -- 1️⃣ สร้าง Schemas
+-- =========================================
 CREATE SCHEMA IF NOT EXISTS ecommerce;
 CREATE SCHEMA IF NOT EXISTS analytics;
 CREATE SCHEMA IF NOT EXISTS audit;
 
+-- =========================================
 -- 2️⃣ สร้างตารางใน ecommerce schema
+-- =========================================
 
 -- ตาราง categories
 CREATE TABLE ecommerce.categories (
@@ -1154,7 +1159,9 @@ CREATE TABLE ecommerce.order_items (
     price NUMERIC(10,2) NOT NULL
 );
 
+-- =========================================
 -- 3️⃣ Insert sample data
+-- =========================================
 
 -- Categories
 INSERT INTO ecommerce.categories (name, description) VALUES
@@ -1239,8 +1246,9 @@ INSERT INTO ecommerce.order_items (order_id, product_id, quantity, price) VALUES
 (14, 10, 1, 14.99),
 (15, 6, 1, 129.99);
 
+-- =========================================
 -- 4️⃣ Queries
-
+-- =========================================
 
 -- 4.1 หาสินค้าที่ขายดีที่สุด 5 อันดับ (จำนวนชิ้นรวม)
 SELECT p.product_id, p.name, SUM(oi.quantity) AS total_sold
@@ -1267,8 +1275,8 @@ GROUP BY cu.customer_id, cu.name
 ORDER BY total_spent DESC
 LIMIT 5;
 
-
 ```
+
 
 **ผลการทำแบบฝึกหัด 3:**
 ```
