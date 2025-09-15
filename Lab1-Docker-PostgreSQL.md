@@ -695,6 +695,8 @@ INSERT INTO test_permissions (name) VALUES ('Test by lab_user'); -- ทำไม
 Result
 ```
 <img width="1342" height="536" alt="image" src="https://github.com/user-attachments/assets/f5da7fa6-7694-48e4-82d9-b39f6797f542" />
+<img width="894" height="185" alt="image" src="https://github.com/user-attachments/assets/167383ed-70cf-4ce9-9471-a14a9ae5114e" />
+
 
 ### Step 12: การจัดการ Volume และ Data Persistence
 
