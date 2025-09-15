@@ -454,7 +454,8 @@ Result
 ```
 <img width="463" height="102" alt="image" src="https://github.com/user-attachments/assets/98af051c-cbbe-4538-b65b-433317b24845" />
 <img width="978" height="202" alt="image" src="https://github.com/user-attachments/assets/45698073-631f-42ac-a639-4ef881615409" />
-<img width="600" height="100" alt="image" src="https://github.com/user-attachments/assets/b81fe002-cee8-4536-aa93-92dac315b403" />
+<img width="541" height="57" alt="image" src="https://github.com/user-attachments/assets/1307dd3d-a341-48b1-bf58-e572b331bf52" />
+
 
 
 **คำถาม
