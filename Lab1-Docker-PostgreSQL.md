@@ -250,6 +250,8 @@ WHERE name IN ('shared_buffers', 'work_mem', 'maintenance_work_mem', 'effective_
 3. ผลการรัน \l และ \du
 ```
 ```ผลการรัน SELECT version();```
+<img width="372" height="185" alt="image" src="https://github.com/user-attachments/assets/99b41eff-0a8c-42b4-8d8a-a23f1dceca62" />
+
 
 <img width="606" height="435" alt="image" src="https://github.com/user-attachments/assets/43a1c7f8-9c98-4095-8803-a66674962b24" />
 
@@ -316,7 +318,15 @@ WHERE datname = 'lab_db';
 2. ผลการรัน \l+ แสดงฐานข้อมูลทั้งหมด
 3. ผลการ query ข้อมูลฐานข้อมูล
 ```
-![Uploading image.png…]()
+```
+Result
+```
+<img width="385" height="191" alt="image" src="https://github.com/user-attachments/assets/c71d126e-f637-43d1-ac7c-508a64451e1a" />
+<img width="1080" height="312" alt="image" src="https://github.com/user-attachments/assets/788d82bb-7034-4260-9772-d9041976b648" />
+<img width="764" height="357" alt="image" src="https://github.com/user-attachments/assets/f6b0e932-2346-401f-89c5-0cb4f0c3ff5d" />
+
+
+
 
 
 ### Step 7: User และ Role Management
