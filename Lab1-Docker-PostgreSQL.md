@@ -736,6 +736,11 @@ docker run --name postgres-backup-test \
 Result
 ```
 <img width="1476" height="414" alt="image" src="https://github.com/user-attachments/assets/8d5929d0-e0f8-4ab6-bb3d-75e3f5864215" />
+แก้ปัญหาแล้ว มีตารางSales แต่รันไม่ได้
+<img width="1143" height="208" alt="image" src="https://github.com/user-attachments/assets/514f9275-536e-4827-9024-bcf1e6b0f5e9" />
+<img width="1462" height="289" alt="image" src="https://github.com/user-attachments/assets/435d0954-c88d-4ca4-be49-5485e2737d08" />
+
+
 
 ## การตรวจสอบผลงานและ Performance
 
