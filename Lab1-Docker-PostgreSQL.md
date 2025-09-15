@@ -877,6 +877,19 @@ docker volume create postgres-data
 
 ```bash
 # พื้นที่สำหรับคำตอบ - เขียน command ที่ใช้
+docker run --name multi-postgres
+  -e POSTGRES_PASSWORD=multipass123
+  -e POSTGRES_DB=testdb 
+  -e POSTGRES_USER=postgres 
+  -v multi-postgres-data:/var/lib/postgresql/data
+  -v postgres-config:/etc/postgresql 
+  -p 5434:5434
+  --memory="1.5g" 
+  --cpus="1.5" 
+  -d postgres 
+  -c shared_buffers=256MB 
+  -c work_mem=16MB 
+  -c maintenance_work_mem=128MB
 
 ```
 
@@ -887,6 +900,9 @@ docker volume create postgres-data
 2. docker ps แสดง container ใหม่
 3. docker stats แสดงการใช้ resources
 ```
+<img width="1454" height="133" alt="image" src="https://github.com/user-attachments/assets/bb88de39-b810-43ad-97ac-0b2d7fba1fab" />
+
+
 
 ### แบบฝึกหัด 2: User Management และ Security
 **คำสั่ง**: สร้างระบบผู้ใช้ที่สมบูรณ์:
@@ -902,8 +918,35 @@ docker volume create postgres-data
    - `admin_user` (รหัสผ่าน: `admin123`) - เป็นสมาชิกของ db_admins
 
 ```sql
--- พื้นที่สำหรับคำตอบ - เขียน SQL commands ที่ใช้
+-- User: dev_user, รหัสผ่าน: dev123, สมาชิกของ app_developers
+CREATE USER dev_user WITH 
+    PASSWORD 'dev123'
+    LOGIN
+    NOSUPERUSER
+    NOCREATEDB
+    NOCREATEROLE
+    NOINHERIT
+    NOREPLICATION
+    CONNECTION LIMIT 10;
 
+-- User: analyst_user, รหัสผ่าน: analyst123, สมาชิกของ data_analysts
+CREATE USER analyst_user WITH 
+    PASSWORD 'analyst123'
+    LOGIN
+    NOSUPERUSER
+    NOCREATEDB
+    NOCREATEROLE
+    NOINHERIT
+    NOREPLICATION
+    CONNECTION LIMIT 10;
+
+-- User: admin_user, รหัสผ่าน: admin123, สมาชิกของ db_admins
+CREATE USER admin_user WITH
+    PASSWORD 'admin123'
+    LOGIN
+    CREATEDB
+    CREATEROLE
+    NOSUPERUSER;
 ```
 
 **ผลการทำแบบฝึกหัด 2:**
