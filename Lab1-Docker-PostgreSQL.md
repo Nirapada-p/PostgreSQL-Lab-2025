@@ -1103,7 +1103,170 @@ INSERT INTO ecommerce.order_items (order_id, product_id, quantity, price) VALUES
    - หาลูกค้าที่ซื้อสินค้ามากที่สุด
 
 ```sql
--- พื้นที่สำหรับคำตอบ - เขียน SQL commands ทั้งหมด
+-- 1️⃣ สร้าง Schemas
+CREATE SCHEMA IF NOT EXISTS ecommerce;
+CREATE SCHEMA IF NOT EXISTS analytics;
+CREATE SCHEMA IF NOT EXISTS audit;
+
+-- 2️⃣ สร้างตารางใน ecommerce schema
+
+-- ตาราง categories
+CREATE TABLE ecommerce.categories (
+    category_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT
+);
+
+-- ตาราง products
+CREATE TABLE ecommerce.products (
+    product_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    price NUMERIC(10,2) NOT NULL,
+    category_id INT REFERENCES ecommerce.categories(category_id),
+    stock INT NOT NULL
+);
+
+-- ตาราง customers
+CREATE TABLE ecommerce.customers (
+    customer_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    phone VARCHAR(20),
+    address TEXT
+);
+
+-- ตาราง orders
+CREATE TABLE ecommerce.orders (
+    order_id SERIAL PRIMARY KEY,
+    customer_id INT REFERENCES ecommerce.customers(customer_id),
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(50),
+    total NUMERIC(10,2)
+);
+
+-- ตาราง order_items
+CREATE TABLE ecommerce.order_items (
+    order_item_id SERIAL PRIMARY KEY,
+    order_id INT REFERENCES ecommerce.orders(order_id),
+    product_id INT REFERENCES ecommerce.products(product_id),
+    quantity INT NOT NULL,
+    price NUMERIC(10,2) NOT NULL
+);
+
+-- 3️⃣ Insert sample data
+
+-- Categories
+INSERT INTO ecommerce.categories (name, description) VALUES
+('Clothing', 'Apparel and fashion items'),
+('Electronics', 'Electronic gadgets and devices'),
+('Books', 'Printed and digital books'),
+('Home & Garden', 'Furniture, plants, and garden tools'),
+('Sports', 'Sporting goods and equipment');
+
+-- Products
+INSERT INTO ecommerce.products (name, description, price, category_id, stock) VALUES
+('T-Shirt', 'Cotton casual t-shirt', 19.99, 1, 200),
+('Jeans', 'Denim blue jeans', 59.99, 1, 150),
+('Wireless Headphones', 'Bluetooth headphones', 199.99, 2, 100),
+('MacBook Air', 'Apple laptop', 1299.99, 2, 50),
+('Gaming Mouse', 'High precision gaming mouse', 79.99, 2, 80),
+('Sneakers', 'Comfortable running sneakers', 129.99, 1, 80),
+('Jacket', 'Winter waterproof jacket', 89.99, 1, 60),
+('Hat', 'Baseball cap', 24.99, 1, 120),
+('Programming Book', 'Learn Python programming', 39.99, 3, 40),
+('Novel', 'Best-selling fiction novel', 14.99, 3, 90),
+('Textbook', 'University mathematics textbook', 79.99, 3, 25),
+('Garden Tools Set', 'Complete gardening tool kit', 49.99, 4, 35),
+('Plant Pot', 'Ceramic decorative pot', 15.99, 4, 80),
+('Tennis Racket', 'Professional tennis racket', 149.99, 5, 20),
+('Football', 'Official size football', 29.99, 5, 55);
+
+-- Customers
+INSERT INTO ecommerce.customers (name, email, phone, address) VALUES
+('Amy Taylor', 'amy@example.com','0811111111','123 Main St'),
+('Tom Miller', 'tom@example.com','0822222222','234 Oak Ave'),
+('David Wilson', 'david@example.com','0833333333','345 Pine Rd'),
+('Mike Brown', 'mike@example.com','0844444444','456 Elm St'),
+('John Smith', 'john@example.com','0855555555','567 Maple Ln'),
+('Sarah Johnson', 'sarah@example.com','0866666666','678 Birch Blvd'),
+('Lisa Anderson', 'lisa@example.com','0877777777','789 Cedar Ct'),
+('Emily Davis', 'emily@example.com','0888888888','890 Walnut St');
+
+-- Orders
+INSERT INTO ecommerce.orders (customer_id, order_date, status, total) VALUES
+(2, NOW(), 'completed', 219.98),
+(6, NOW(), 'completed', 219.98),
+(4, NOW(), 'completed', 159.97),
+(5, NOW(), 'completed', 79.99),
+(8, NOW(), 'completed', 89.99),
+(3, NOW(), 'completed', 1314.97),
+(6, NOW(), 'completed', 149.99),
+(7, NOW(), 'completed', 294.97),
+(4, NOW(), 'completed', 199.99),
+(2, NOW(), 'completed', 969.96),
+(5, NOW(), 'completed', 39.99),
+(1, NOW(), 'completed', 599.97),
+(8, NOW(), 'processing', 179.94),
+(3, NOW(), 'shipped', 30.98),
+(7, NOW(), 'completed', 129.99);
+
+-- Order Items
+INSERT INTO ecommerce.order_items (order_id, product_id, quantity, price) VALUES
+(1, 1, 2, 19.99),
+(1, 2, 1, 59.99),
+(2, 3, 1, 199.99),
+(2, 1, 1, 19.99),
+(3, 2, 1, 59.99),
+(3, 5, 1, 79.99),
+(3, 1, 1, 19.99),
+(4, 5, 1, 79.99),
+(5, 7, 1, 89.99),
+(6, 4, 1, 1299.99),
+(6, 10, 2, 14.99),
+(7, 14, 1, 149.99),
+(8, 6, 2, 129.99),
+(8, 8, 1, 24.99),
+(8, 9, 1, 39.99),
+(9, 3, 1, 199.99),
+(10, 2, 1, 899.99),
+(10, 1, 3, 19.99),
+(10, 12, 1, 49.99),
+(11, 9, 1, 39.99),
+(12, 1, 1, 599.97),
+(13, 15, 6, 29.99),
+(14, 13, 2, 15.99),
+(14, 10, 1, 14.99),
+(15, 6, 1, 129.99);
+
+-- 4️⃣ Queries
+
+
+-- 4.1 หาสินค้าที่ขายดีที่สุด 5 อันดับ (จำนวนชิ้นรวม)
+SELECT p.product_id, p.name, SUM(oi.quantity) AS total_sold
+FROM ecommerce.order_items oi
+JOIN ecommerce.products p ON oi.product_id = p.product_id
+GROUP BY p.product_id, p.name
+ORDER BY total_sold DESC
+LIMIT 5;
+
+-- 4.2 ยอดขายรวมของแต่ละหมวดหมู่
+SELECT c.category_id, c.name AS category_name, SUM(oi.quantity * oi.price) AS total_sales
+FROM ecommerce.order_items oi
+JOIN ecommerce.products p ON oi.product_id = p.product_id
+JOIN ecommerce.categories c ON p.category_id = c.category_id
+GROUP BY c.category_id, c.name
+ORDER BY total_sales DESC;
+
+-- 4.3 ลูกค้าที่ซื้อสินค้ามากที่สุด (รวมมูลค่า)
+SELECT cu.customer_id, cu.name AS customer_name, SUM(oi.quantity * oi.price) AS total_spent
+FROM ecommerce.order_items oi
+JOIN ecommerce.orders o ON oi.order_id = o.order_id
+JOIN ecommerce.customers cu ON o.customer_id = cu.customer_id
+GROUP BY cu.customer_id, cu.name
+ORDER BY total_spent DESC
+LIMIT 5;
+
 
 ```
 
